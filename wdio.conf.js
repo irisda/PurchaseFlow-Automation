@@ -28,7 +28,7 @@ export const config = {
 
     suites: {
         loginPage: ['./test/specs/login.test.js'],
-
+        purchaseProduct: ['./test/specs/purchase.test.js']
     },
     // Patterns to exclude.
     exclude: [
