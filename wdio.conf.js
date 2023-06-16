@@ -25,6 +25,11 @@ export const config = {
     specs: [
         './test/specs/**/*.js'
     ],
+
+    suites: {
+        loginPage: ['./test/specs/login.test.js'],
+
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
