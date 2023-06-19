@@ -1,6 +1,6 @@
 import LoginPage from '../pageobjects/login.page.js'
 import PurchasePage from '../pageobjects/purchaseFlow.page.js'
-import customConfig from '/Users/admin/Desktop/test-qa-taskOne/test/customConfig.js';
+import customConfig from '../customConfig';
 
 describe('Purchase flow', () => {
     it('should login  and select product', async () => {
