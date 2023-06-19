@@ -49,7 +49,7 @@ class  PurchasePage {
     }
 
     get checkoutCompleteText() {
-        return $('spa*n=Checkout: Complete!')
+        return $('span*=Checkout: Complete!')
     }
 
     get backBtn() {
@@ -68,6 +68,25 @@ class  PurchasePage {
         return $('#continue-shopping')
     }
 
+
+    get firstProduct() {
+        return $('.inventory_item_price') 
+
+    }
+
+    get btnSort() {
+        return $('[data-test="product_sort_container"]')
+    }
+
+    get lowToHighSort() {
+        return $('[value="lohi"]')
+    }
+
+    get highToLowSort() {
+        return $('[value="hilo"]')
+    }
+
+    
     async selectProduct() {
         await this.productBag.waitForDisplayed()
         await this.productBag.click()
@@ -82,7 +101,6 @@ class  PurchasePage {
     async goToShoppingCart() {
         await this.shoppingCartBtn.click()
         await this.productBag.isDisplayed()
-        
     }
 
     async removeProductFromCart() {
@@ -117,6 +135,22 @@ class  PurchasePage {
         await this.thanksMessageText.isExisting()
         await this.backBtn.isClickable()
 
+    }
+
+    async validateSorting() {
+        await this.btnSort.click()
+        await this.lowToHighSort.waitForDisplayed()
+        await this.lowToHighSort.click()
+        const firstPriceProduct = await this.firstProduct.getText()  //Store the price of first product in this variable
+        //Than  we change the sort
+        await this.highToLowSort.click()
+        //now we get the last element after the second sort 
+        const priceProduct =await $$('.inventory_item_price');
+        const lastPriceProduct = await  priceProduct[priceProduct.length - 1];
+        const priceText = await lastPriceProduct.getText();
+         //expect first element to be equal as the last element because we changed the sort
+         await expect(firstPriceProduct).toEqual(priceText)
+         await browser.pause(3000)
     }
 
 

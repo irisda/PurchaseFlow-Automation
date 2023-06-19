@@ -21,12 +21,15 @@ describe('Purchase flow', () => {
         await  expect(browser).toHaveUrlContaining('cart')
     })
 
-    // it('Remove product from cart', async () => {
-    //     await PurchasePage.removeProductFromCart()
-    // })
+    it('Remove product from cart', async () => {
+        await PurchasePage.removeProductFromCart()
+        await PurchasePage.continueToShopping()
+    })
 
-
-
+    it('Readd Product and continue to payment', async () => {
+        await PurchasePage.addProductToCart()
+        await PurchasePage.goToShoppingCart()
+    })
 
     it('Proceed to Checkout details', async () => {
         await PurchasePage.proceedToCheckout()
@@ -39,29 +42,21 @@ describe('Purchase flow', () => {
        
     })
 
-    xit('Product Order Received Confirmation', async () => {
-        await PurchasePage.productOrderConfirmation()
-        
+    it('Product Order Received Confirmation', async () => {
+        await PurchasePage.productOrderConfirmation() 
+   })
 
-       
-       
+   describe('Validating the sort methods', () => {
+    it('should login and stay on homepage', async () => {
+        await LoginPage.open(customConfig.baseUrl)
+        await LoginPage.login(customConfig.userEmail, customConfig.userPassword)
     })
-
-
-
-
-
     
+   it('Sort Testing', async () => {
+    await PurchasePage.validateSorting()
 
+})
 
-
-
-
-
-
-
-
-
-
+    })
 
 })

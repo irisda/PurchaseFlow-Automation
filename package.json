@@ -11,5 +11,9 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "@wdio/devtools-service": "^8.11.2",
+    "webdriverio": "^8.11.2"
   }
 }
