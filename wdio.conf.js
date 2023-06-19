@@ -1,4 +1,3 @@
-
 export const config = {
     //
     // ====================
@@ -72,8 +71,9 @@ export const config = {
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
         'goog:chromeOptions': {
-            args: ['--disable-gpu', '--disable-dev-shm-usage'],  //'--headless'
-    }
+            args: process.env.arg ? ['--headless'] : [],
+          },
+ 
     
 
     

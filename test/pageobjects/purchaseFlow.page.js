@@ -139,13 +139,14 @@ class  PurchasePage {
 
     async validateSorting() {
         await this.btnSort.click()
+        //
         await this.lowToHighSort.waitForDisplayed()
         await this.lowToHighSort.click()
         const firstPriceProduct = await this.firstProduct.getText()  //Store the price of first product in this variable
         //Than  we change the sort
         await this.highToLowSort.click()
         //now we get the last element after the second sort 
-        const priceProduct =await $$('.inventory_item_price');
+        const priceProduct = await $$('.inventory_item_price');
         const lastPriceProduct = await  priceProduct[priceProduct.length - 1];
         const priceText = await lastPriceProduct.getText();
          //expect first element to be equal as the last element because we changed the sort
