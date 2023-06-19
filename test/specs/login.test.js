@@ -1,5 +1,5 @@
 import LoginPage from '../pageobjects/login.page.js'
-import customConfig from '../customConfig';
+import customConfig from '../customConfig.js';
 
 
 describe('Log in Test', () => {

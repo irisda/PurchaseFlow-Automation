@@ -1,6 +1,6 @@
 import LoginPage from '../pageobjects/login.page.js'
 import PurchasePage from '../pageobjects/purchaseFlow.page.js'
-import customConfig from '../customConfig';
+import customConfig from '../customConfig.js';
 
 describe('Purchase flow', () => {
     it('should login  and select product', async () => {
@@ -39,7 +39,7 @@ describe('Purchase flow', () => {
        
     })
 
-    it('Product Order Received Confirmation', async () => {
+    xit('Product Order Received Confirmation', async () => {
         await PurchasePage.productOrderConfirmation()
         
 

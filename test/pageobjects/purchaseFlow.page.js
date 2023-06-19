@@ -1,4 +1,4 @@
-import customConfig from '../customConfig';
+import customConfig from '../customConfig.js';
 
 class  PurchasePage {
 
