@@ -1,4 +1,3 @@
-import { $ } from 'webdriverio/build/commands/browser';
 import customConfig from '/Users/admin/Desktop/test-qa-taskOne/test/customConfig.js';
 
 class  PurchasePage {
@@ -96,9 +95,6 @@ class  PurchasePage {
         await this.continueShopping.waitForDisplayed()
         await this.continueShopping.click()
     }
-
-
-
 
 
     async proceedToCheckout() {

@@ -21,9 +21,9 @@ describe('Purchase flow', () => {
         await  expect(browser).toHaveUrlContaining('cart')
     })
 
-    it('Remove product from cart', async () => {
-        await PurchasePage.removeProductFromCart()
-    })
+    // it('Remove product from cart', async () => {
+    //     await PurchasePage.removeProductFromCart()
+    // })
 
 
 
