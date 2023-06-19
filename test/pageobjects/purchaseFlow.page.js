@@ -1,4 +1,4 @@
-import customConfig from '/Users/admin/Desktop/test-qa-taskOne/test/customConfig.js';
+import customConfig from '../customConfig';
 
 class  PurchasePage {
 
