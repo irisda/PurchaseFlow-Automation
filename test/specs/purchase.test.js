@@ -21,11 +21,39 @@ describe('Purchase flow', () => {
         await  expect(browser).toHaveUrlContaining('cart')
     })
 
+    it('Remove product from cart', async () => {
+        await PurchasePage.removeProductFromCart()
+    })
+
+
+
 
     it('Proceed to Checkout details', async () => {
         await PurchasePage.proceedToCheckout()
         await expect(browser).toHaveUrlContaining('step-one')
     })
+
+    it('Continue to Payment Process', async () => {
+        await PurchasePage.continuetoPayment()
+        await expect(browser).toHaveUrlContaining('complete')
+       
+    })
+
+    it('Product Order Received Confirmation', async () => {
+        await PurchasePage.productOrderConfirmation()
+        
+
+       
+       
+    })
+
+
+
+
+
+    
+
+
 
 
 
