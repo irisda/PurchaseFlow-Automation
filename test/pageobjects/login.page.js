@@ -1,4 +1,3 @@
-
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -18,6 +17,16 @@ class  LoginPage {
         return $('#login-button');
     }
 
+    get btnThreeDots () {
+        return $('#react-burger-menu-btn')
+    }
+
+    get btnLogout() {
+        return $('#logout_sidebar_link')
+    }
+
+
+
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -30,6 +39,11 @@ class  LoginPage {
         await this.btnSubmit.click();
     }
 
+    async logoutFromSauceDemo() {
+        await this.btnThreeDots.waitForDisplayed()
+        await this.btnThreeDots.click()
+        await this.btnLogout.click()
+    }
     /**
      * a method to open the wanted url
      * @path is url variabel
