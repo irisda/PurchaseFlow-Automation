@@ -1,4 +1,4 @@
-# test-qa-taskOne
+# automate the purchase flow using WebdriverIO
 Automated test framework for the Sauce Demo website (https://www.saucedemo.com/) to automate the purchase flow using WebdriverIO.
 
 This repository will contain the solution for the second task.
